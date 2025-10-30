@@ -1,0 +1,31 @@
+# -*- coding: utf-8 -*-
+import unittest
+
+from fibonacci import encontrar_sequencia_fibonacci
+
+class TestFibonacci(unittest.TestCase):
+
+    def test_sequencia_de_zero(self):
+        """Testa o caso de borda n=0. Deve retornar uma lista vazia."""
+        self.assertEqual(encontrar_sequencia_fibonacci(0), [])
+
+    def test_sequencia_de_um(self):
+        """Testa o caso de borda n=1. Deve retornar [0]."""
+        self.assertEqual(encontrar_sequencia_fibonacci(1), [0])
+
+    def test_sequencia_de_dois(self):
+        """Testa o caso n=2. Deve retornar [0, 1]."""
+        self.assertEqual(encontrar_sequencia_fibonacci(2), [0, 1])
+
+    def test_sequencia_padrao_sete(self):
+        """Testa uma sequência padrão (n=7)."""
+        esperado = [0, 1, 1, 2, 3, 5, 8]
+        self.assertEqual(encontrar_sequencia_fibonacci(7), esperado)
+
+    def test_sequencia_padrao_dez(self):
+        """Testa uma sequência padrão (n=10)."""
+        esperado = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+        self.assertEqual(encontrar_sequencia_fibonacci(10), esperado)
+
+if __name__ == '__main__':
+    unittest.main()
